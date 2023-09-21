@@ -24,7 +24,7 @@
    grid-column: 3/5;
 }
 
-.kotak1 {
+/* .kotak1 {
    grid-column: 1/3;
    grid-row: 1/3;
 }
@@ -36,4 +36,14 @@
 .kotak11 {
    grid-column: 1/3;
    grid-row: 5/7;
+} */
+
+.kotak1,
+.kotak10,
+.kotak11 {
+   grid-area: span 2 / span 2;
+}
+
+.kotak8{
+   grid-column: 1;
 }
