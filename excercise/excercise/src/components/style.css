@@ -1,0 +1,23 @@
+:root {
+   ---icon: #578dea;
+}
+
+.section {
+    position: relative;
+}
+
+.container {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+#text-input{
+    height: 100px;
+    width: 300px;
+}
+#btn {
+    margin: 10px 20px;
+    width: 100px;
+    height: 30px;
+}
