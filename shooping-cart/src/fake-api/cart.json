@@ -1,0 +1,22 @@
+{
+   "cart": [
+      {
+         "id": 1,
+         "name": "Shoes",
+         "price": 100000,
+         "img": "https://down-id.img.susercontent.com/file/sg-11134201-7rbk0-lkuar1wmb1pzca"
+      },
+      {
+         "id": 2,
+         "name": "Kroto",
+         "price": 30000,
+         "img": "https://down-id.img.susercontent.com/file/17b61b081548094eea7ca9e02dd489d7"
+      },
+      {
+         "id": 3,
+         "name": "Pakan burung",
+         "price": 130000,
+         "img": "https://down-id.img.susercontent.com/file/sg-11134201-23010-c78yzl7kubmv0e"
+      }
+   ]
+}
