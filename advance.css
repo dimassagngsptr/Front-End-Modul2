@@ -1,0 +1,85 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+.main {
+   background-color: orange;
+   height: 1500px;
+}
+.nav {
+   position: fixed;
+   background-color: rgb(0, 0, 255);
+   height: 50px;
+   text-align: center;
+   line-height: 50px;
+   width: 100vw;
+   color: white;
+   top: 0;
+   z-index: 2;
+}
+
+.contact {
+   width: 100px;
+   height: 100px;
+   border-radius: 50%;
+   line-height: 100px;
+   text-align: center;
+   background-color: rgb(173, 255, 47, 0.6);
+   position: fixed;
+   top: 80vh;
+   left: 90vw;
+   z-index: 2;
+}
+
+.content {
+   margin: 50px 0 0;
+}
+
+.sticky {
+   position: sticky;
+   background-color: yellow;
+   height: 50px;
+   text-align: center;
+   line-height: 50px;
+   top: 50px;
+   z-index: 1;
+}
+
+.tickets {
+   background-color: black;
+   color: white;
+   width: 200px;
+   height: 40px;
+   line-height: 40px;
+   text-align: center;
+   border-radius: 10px;
+   border: 1px dotted green;
+   position: relative;
+   margin: 10px 0 0 0;
+}
+
+.sold {
+    background-color: red;
+    width: 100px;
+    height: 20px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    right: -38px;
+    transform: rotate(30deg);
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 468px) {
+    .nav{
+        background-color: green;
+    }
+    .contact{
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 12px;
+    }
+    
+}
