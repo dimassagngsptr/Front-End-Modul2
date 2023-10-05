@@ -5,41 +5,41 @@ import { useEffect, useState } from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { setData } from "./redux/regist";
 import { DashboardPage } from "./pages/Dashboard";
+import { Button } from "@chakra-ui/react";
 
 function App() {
   const dispatch = useDispatch();
-  const id = localStorage.getItem("id");
-  // console.log(id);
+  let id = localStorage.getItem("id");
+
   const keepLogin = async () => {
     try {
-      const response = await axios.get(`http://localhost:2000/users/${id}`);
+      let response = await axios.get(`http://localhost:2000/users/${id}`);
       dispatch(setData(response.data));
+      console.log(response.data);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const data = async () => {
-    try {
-      const response = await axios.get("http://localhost:2000/users");
-      dispatch(setData(response.data));
-    } catch (error) {
-      console.log(error);
-    }
-  };
   useEffect(() => {
     keepLogin();
   }, []);
+  console.log(id);
+
+  // console.log(id);
+
   return (
     <>
       <Routes>
         <Route
           path="/"
-          element={id ? <Navigate to="/dashboard" /> : <HomePage />}
+          element={
+            id !== "undefined" ? <Navigate to="/dashboard" /> : <HomePage />
+          }
         />
         <Route
           path="/dashboard"
-          element={id ? <DashboardPage /> : <Navigate to="/" />}
+          element={id === "undefined" ? <Navigate to="/" /> : <DashboardPage />}
         />
       </Routes>
     </>

@@ -18,6 +18,7 @@ import {
   MenuDivider,
   MenuItem,
   MenuList,
+  Button
 } from "@chakra-ui/react";
 import {
   FiHome,
@@ -161,9 +162,7 @@ function MobileNav({ onOpen, ...rest }) {
                   ml="2"
                 >
                   <Text fontSize="sm">{user.name}</Text>
-                  <Text fontSize="xs" >
-                    {user.email}
-                  </Text>
+                  <Text fontSize="xs">{user.email}</Text>
                 </VStack>
                 <Box display={{ base: "none", md: "flex" }}>
                   <FiChevronDown />
@@ -178,7 +177,7 @@ function MobileNav({ onOpen, ...rest }) {
               <MenuItem>Settings</MenuItem>
               <MenuItem>Billing</MenuItem>
               <MenuDivider />
-              <MenuItem>Sign out</MenuItem>
+                <MenuItem>Sign out</MenuItem>
             </MenuList>
           </Menu>
         </Flex>
