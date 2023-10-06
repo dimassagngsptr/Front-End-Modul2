@@ -29,14 +29,13 @@ export const FormRegist = () => {
    const [showPassword, setShowPassword] = useState(false);
    const handleSubmit = async (data) => {
       try {
-         const response = await axios.post(
-            "http://localhost:2000/users",
-            data
-         );
+         const response = await axios.post("http://localhost:2000/users", data);
          console.log(response);
       } catch (error) {
          console.log(error);
       }
+      alert("Success create account")
+      window.location.reload();
    };
 
    return (
