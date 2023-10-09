@@ -49,6 +49,12 @@
       "name": "Dimas Ageng",
       "email": "dimas@gmail.com",
       "id": 3
+    },
+    {
+      "tweet": "test1",
+      "name": "user 1",
+      "email": "user1@gmail.com",
+      "id": 4
     }
   ]
 }

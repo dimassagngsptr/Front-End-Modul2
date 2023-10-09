@@ -6,10 +6,12 @@ import {
    Heading,
    Button,
    Avatar,
+   HStack,
 } from "@chakra-ui/react";
 import axios from "axios";
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
+import { FaRegCommentDots } from "react-icons/fa";
 export const Tweets = () => {
    const [tweets, setTweets] = useState([]);
    const userName = useSelector((state) => state.user.value);
@@ -48,37 +50,59 @@ export const Tweets = () => {
    }, []);
 
    return (
-      <Box width="50%" padding="5px" gap="20px">
+      <Box width="50%" padding="5px">
          <Box
             border="1px solid"
             borderColor="gray.400"
             rounded="10px"
             height="200px"
-            padding="10px">
+            padding="10px"
+            margin="0 auto 10px ">
             <Heading>Beranda</Heading>
-            <Flex gap="40px" margin="10px 0">
-               <Avatar name={userName.name} />
-               <Input placeholder="" size="lg" width="50%" ref={tweetRef} />
+            <Flex
+               gap="40px"
+               padding="30px 0"
+               alignItems="center"
+               justifyContent="space-evenly">
+               <Text>
+                  <Avatar name={userName.name} />
+                  <Input placeholder="" size="lg" width="50%" ref={tweetRef} />
+               </Text>
+               <Button
+                  bg="blue.400"
+                  px="30px"
+                  rounded="30px"
+                  color="white"
+                  onClick={handleButton}>
+                  Tweet
+               </Button>
             </Flex>
-            <Button
-               bg="blue.400"
-               px="30px"
-               rounded="30px"
-               color="white"
-               onClick={handleButton}>
-               Tweet
-            </Button>
          </Box>
          <Box>
             {tweets.map((item, index) => {
                return (
-                  <Flex gap="20px" alignItems="center" border="1px solid">
-                     <Avatar name={userName.name} size="md" />
-                     <Text>
-                        {item.name} {item.email}
-                     </Text>
-                     {item.tweet}
-                  </Flex>
+                  <Box
+                     margin="10px auto"
+                     alignItems="center"
+                     border="1px solid"
+                     borderColor="gray.400"
+                     rounded="10px">
+                     <Flex
+                        alignItems="center"
+                        justifyContent="space-between"
+                        padding="2% 10%">
+                        <HStack>
+                           <Avatar name={userName.name} size="md" />
+                           <Flex flexDirection="column" padding="0 20px">
+                              <Text>
+                                 {item.name} {item.email}
+                              </Text>
+                              {item.tweet}
+                           </Flex>
+                        </HStack>
+                     </Flex>
+                     <FaRegCommentDots />
+                  </Box>
                );
             })}
          </Box>

@@ -6,8 +6,8 @@ import {
    CloseButton,
    Flex,
    HStack,
-   VStack,
    Icon,
+   Button,
    useColorMode,
    useColorModeValue,
    Text,
@@ -44,6 +44,10 @@ const LinkItems = [
 function SidebarContent({ onClose, onOpen, ...rest }) {
    const user = useSelector((state) => state.user.value);
    const { colorMode, toggleColorMode } = useColorMode();
+   const handleLogout = () => {
+      localStorage.clear();
+      window.location.reload();
+   };
    return (
       <Box
          transition="3s ease"
@@ -142,7 +146,7 @@ function SidebarContent({ onClose, onOpen, ...rest }) {
                         <MenuItem>Settings</MenuItem>
                         <MenuItem>Favourite</MenuItem>
                         <MenuDivider />
-                        <MenuItem>Sign out</MenuItem>
+                        <MenuItem onClick={handleLogout}>Sign out</MenuItem>
                      </MenuList>
                   </Menu>
                </Box>
