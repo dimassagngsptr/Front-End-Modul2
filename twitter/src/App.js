@@ -13,16 +13,7 @@ function App() {
    const keepLogin = async () => {
       try {
          const response = await axios.get(`http://localhost:2000/users/${id}`);
-         dispatch(setData(response.data));
-      } catch (error) {
-         console.log(error);
-      }
-   };
-
-   const data = async () => {
-      try {
-         const response = await axios.get("http://localhost:2000/users");
-         dispatch(setData(response.data));
+         dispatch(setData(response.data[0]));
       } catch (error) {
          console.log(error);
       }
